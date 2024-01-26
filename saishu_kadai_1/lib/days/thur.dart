@@ -40,6 +40,21 @@ class _ThursdayState extends State<Thursday> {
           ),
         ),
         backgroundColor: Colors.white70,
+        actions: <Widget>[
+          IconButton(
+            onPressed: ()async{
+              SharedPreferences prefs = await SharedPreferences.getInstance();
+              setState((){
+                taskList4 = [];
+                prefs.setStringList('TaskList4', taskList4);
+              });
+            },
+            icon: const Icon(
+              Icons.delete,
+              color: Colors.black,
+            ),
+          ),
+        ],
       ),
       body: Center(
         child: Column(

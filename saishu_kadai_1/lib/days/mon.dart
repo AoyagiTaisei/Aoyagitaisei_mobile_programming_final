@@ -40,6 +40,21 @@ class _MondayState extends State<Monday> {
           ),
         ),
         backgroundColor: Colors.white70,
+        actions: <Widget>[
+          IconButton(
+            onPressed: ()async{
+              SharedPreferences prefs = await SharedPreferences.getInstance();
+              setState((){
+                taskList1 = [];
+                prefs.setStringList('TaskList1', taskList1);
+              });
+            },
+            icon: const Icon(
+              Icons.delete,
+              color: Colors.black,
+            ),
+          ),
+        ],
       ),
       body: Center(
         child: Column(
@@ -52,8 +67,7 @@ class _MondayState extends State<Monday> {
                   return NewTask();
                 }));
                 print(Task1);
-                SharedPreferences prefs =
-                    await SharedPreferences.getInstance();
+                SharedPreferences prefs = await SharedPreferences.getInstance();
                 setState(() {
                   taskList1.add(Task1);
                   prefs.setStringList('TaskList1', taskList1);

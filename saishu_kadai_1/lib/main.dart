@@ -75,6 +75,9 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
         backgroundColor: Colors.blue.shade800,
+        actions: <Widget>[
+          IconButton(onPressed: null, icon: const Icon(Icons.accessibility),)
+        ],
       ),
       body: Center(
         child: Column(

@@ -46,6 +46,7 @@ class _NewTaskState extends State<NewTask> {
                   "入力完了",
                   style: TextStyle(
                     color: Colors.cyanAccent,
+                    fontSize: 30,
                   ),
                 ),
               ),
